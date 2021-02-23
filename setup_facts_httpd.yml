@@ -1,4 +1,3 @@
----
 - name: Install apache and starts the service
   hosts: labservers
   become: yes
@@ -11,5 +10,4 @@
     service:
         name: "{{ ansible_local.custom.general.service }}"
         state: "{{ ansible_local.custom.general.state }}"
-...
 
