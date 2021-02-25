@@ -10,7 +10,7 @@
     name: firewalld
     state: started
     enabled: true
--name: Install httpd
+- name: Install httpd
   yum:
     name: "{{ item }}"
     state: latest
@@ -43,7 +43,7 @@
     state: enabled
     immediate: true
     permanent: true
--name: enable selinux boolean
+- name: enable selinux boolean
   seboolean:
     name: "{{ item }}"
     state: yes
