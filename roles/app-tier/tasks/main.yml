@@ -23,18 +23,18 @@
     state: started
 - name: Copy vhost template file
   template:
-    src: vhosts.conf.j2
-    dest: /etc/httpd/conf.d/vhosts.conf
+    src: vhost.conf.j2
+    dest: /etc/httpd/conf.d/vhost.conf
   notify:
     - restart_httpd
 - name: Create document root
   file:
-    path: /var/www/vhosts
+    path: /var/www/vhost
     state: directory
 - name: Copy index.j2 file
   template:
     src: index.j2
-    dest: /var/www/vhosts/index.php
+    dest: /var/www/vhost/index.php
     mode: 0644
     owner: apache
 - name: Open httpd port
