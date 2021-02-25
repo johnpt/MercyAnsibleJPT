@@ -51,6 +51,6 @@
 - name: Restore database
   mysql_db:
     name: "{{ db['database'] }}"
-    staet: import
+    state: import
     target: "/tmp/{{ db['backupfile'] }}"
     login_password: "{{ db['password'] }}"
