@@ -1,6 +1,9 @@
 ---
 # tasks file for roles/app-tier
 # installation of packages based on inventory groups
+- debug:
+    msg: "The groups variable {{ groups }} the db variable {{ db }}"
+
 - name: Install Firewalld
   yum:
     name: firewalld
