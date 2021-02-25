@@ -47,7 +47,7 @@
 - name: Copy databse dump file
   copy:
     src: "{{ db['backupfile'] }}"
-    desst: /tmp
+    dest: /tmp
 - name: Restore database
   mysql_db:
     name: "{{ db['database'] }}"
