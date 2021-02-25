@@ -5,7 +5,7 @@
     name: "{{ package_name }}"
     params: "{{ parameters }}"
     state: latest
-  when: ansible_distribution = "Microsoft Windows Server 2012 R2 Datacenter"
+  when: ansible_distribution == "Microsoft Windows Server 2012 R2 Datacenter"
 
 - name: Start windows server
   win_service:
@@ -15,7 +15,7 @@
   when: ansible_distribution == "Microsoft Windows Server 2012 R2 Datacenter"
 
 - name: Add win_firewall_rule
-  wind_firewall_rule:
+  win_firewall_rule:
     name: "{{ service_name }}"
     localport: "{{ local_port }}"
     action: allow
