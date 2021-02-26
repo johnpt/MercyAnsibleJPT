@@ -3,5 +3,5 @@
   tasks:
   - name: check for sudoo package
     yum:
-      name: sudoo
+      name: sudo
       state: present
